@@ -38,7 +38,7 @@ async function download(uri, fpath){
 
 async function fetch(uri){
   let res = await axios(makeRequest(uri))
-  console.log(res.data)
+  return res.data
 }
 
 
