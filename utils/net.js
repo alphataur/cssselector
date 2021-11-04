@@ -36,4 +36,16 @@ async function download(uri, fpath){
   res.data.pipe(file)
 }
 
-download("http://kelseymcnair.com/Kel's%20Music/iTunes/iTunes%20Music/Podcasts/Naruto%20Soundtrack/21%20Naruto%20Main%20Theme.mp3", "something.mp3")
+async function fetch(uri){
+  let res = await axios(makeRequest(uri))
+  console.log(res.data)
+}
+
+
+exports.fetch = fetch
+exports.download = download
+exports.DOWNLOAD = DOWNLOAD
+exports.FETCH = FETCH
+
+//fetch("http://in-the-raw.org")
+//download("http://kelseymcnair.com/Kel's%20Music/iTunes/iTunes%20Music/Podcasts/Naruto%20Soundtrack/21%20Naruto%20Main%20Theme.mp3", "something.mp3")
